@@ -8,7 +8,7 @@
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods:GET,POST');
 header('Access-Control-Allow-Headers, Content-Type');
-
+if (! defined('BASEPATH')) exit('No direct script access allowed');
 class Data extends CI_Controller
 {
 
@@ -26,12 +26,14 @@ class Data extends CI_Controller
 
 
 	public function getClient(){
-
+		$UserName = "Tharaka";
+		$Email = "Tharakacz823@gmail.com";
+		$PhoneNo = "0779112886";
 
 		$result=$this->datatest->AddClient([
-			'UserName'=>$_POST['Tharaka'],
-			'Email'=>$_POST['Tharakacz823@gmail.com'],
-			'PhoneNo'=>$_POST['0779112886'],
+			'UserName'=>$UserName,
+			'Email'=>$Email,
+			'PhoneNo'=>$PhoneNo,
 
 		]);
 		echo $result;
